@@ -12,7 +12,9 @@ example (a b c : ℝ) : c * b * a = b * (a * c) := by
   rw [mul_comm]
 
 example (a b c : ℝ) : a * (b * c) = b * (a * c) := by
-  sorry
+  rw [mul_comm]
+  rw [mul_assoc]
+  rw [mul_comm c a]
 
 -- An example.
 example (a b c : ℝ) : a * b * c = b * c * a := by
