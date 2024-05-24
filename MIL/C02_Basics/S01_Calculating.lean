@@ -110,7 +110,16 @@ section
 variable (a b c d : ℝ)
 
 example : (a + b) * (c + d) = a * c + a * d + b * c + b * d := by
-  sorry
+  rw [mul_add, add_mul, add_mul, ← add_assoc]
+  ring
+
+example : (a + b) * (c + d) = a * c + a * d + b * c + b * d :=
+  calc
+    (a + b) * (c + d) = (c + d) * a + (c + d) * b := by
+      rw [mul_comm, mul_add, mul_comm, mul_comm]
+    _ = a * c + a * d + b * c + b * d := by
+      rw [add_mul, add_mul, ← add_assoc]
+      ring
 
 example (a b : ℝ) : (a + b) * (a - b) = a ^ 2 - b ^ 2 := by
   sorry
