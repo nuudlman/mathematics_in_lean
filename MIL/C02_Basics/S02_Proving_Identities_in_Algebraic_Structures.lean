@@ -59,7 +59,7 @@ theorem add_left_cancel {a b c : R} (h : a + b = a + c) : b = c := by
   rw [← neg_add_cancel_left a b, h, ← add_assoc]; simp
 
 theorem add_right_cancel {a b c : R} (h : a + b = c + b) : a = c := by
-  sorry
+  rw [← neg_add_cancel_left b c, add_comm b c, ← h]; simp
 
 theorem mul_zero (a : R) : a * 0 = 0 := by
   have h : a * 0 + a * 0 = a * 0 + 0 := by
