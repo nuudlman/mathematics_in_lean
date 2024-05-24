@@ -74,6 +74,9 @@ variable (a b c : ℝ)
 #check mul_assoc c a b
 #check mul_comm a
 #check mul_comm
+#check two_mul
+#check add_mul
+#check mul_add
 
 end
 
