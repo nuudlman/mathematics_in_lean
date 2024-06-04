@@ -38,12 +38,13 @@ example : min a b = min b a := by
     apply min_le_right
     apply min_le_left
 
+
 example : max a b = max b a := by
   apply le_antisymm
   repeat
-    apply le_max
-    apply max_le_left
-    apply max_le_right
+    apply max_le
+    apply le_max_right
+    apply le_max_left
 
 
 example : min (min a b) c = min a (min b c) := by
